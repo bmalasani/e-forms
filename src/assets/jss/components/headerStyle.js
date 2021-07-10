@@ -1,0 +1,178 @@
+import {
+  container,
+  defaultFont,
+  primaryColor,
+  defaultBoxShadow,
+  infoColor,
+  successColor,
+  warningColor,
+  dangerColor,
+  whiteColor,
+} from "../styles.js";
+
+const headerStyle = (theme) => ({
+  appBar: {
+    backgroundColor: primaryColor[1],
+    boxShadow: "none",
+    borderBottom: "0",
+    marginBottom: "0",
+    position: "absolute",
+    width: "100%",
+    paddingTop: "10px",
+    color: whiteColor,
+    border: "0",
+    borderRadius: "3px",
+    padding: "10px 0",
+    transition: "all 150ms ease 0s",
+    minHeight: "50px",
+    display: "block",
+    zIndex: theme.zIndex.drawer + 1,
+  },
+  img: {
+    width: "40px",
+    top: "5px",
+    position: "absolute",
+    verticalAlign: "middle",
+    border: "0",
+  },
+  background: {
+    position: "absolute",
+    zIndex: "1",
+    height: "100%",
+    width: "100%",
+    display: "block",
+    top: "0",
+    left: "0",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    "&:after": {
+      position: "absolute",
+      zIndex: "3",
+      width: "100%",
+      height: "100%",
+      content: '""',
+      display: "block",
+      background: primaryColor[0],
+      opacity: ".8",
+    },
+  },
+  container: {
+    ...container,
+    minHeight: "50px",
+  },
+  flex: {
+    flex: 1,
+  },
+  logo: {
+    position: "relative",
+    zIndex: "4",
+    flexGrow: 1,
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+    },
+  },
+  logoLink: {
+    ...defaultFont,
+    textTransform: "uppercase",
+    padding: "5px 0",
+    display: "block",
+    fontSize: "18px",
+    textAlign: "left",
+    fontWeight: "400",
+    lineHeight: "30px",
+    textDecoration: "none",
+    backgroundColor: "transparent",
+    "&,&:hover": {
+      color: whiteColor,
+    },
+  },
+  logoImage: {
+    top: "5px",
+    width: "40px",
+    display: "inline-block",
+    maxHeight: "30px",
+    marginLeft: "10px",
+    marginRight: "5px",
+  },
+  title: {
+    ...defaultFont,
+    letterSpacing: "unset",
+    lineHeight: "30px",
+    fontSize: "18px",
+    borderRadius: "3px",
+    textTransform: "none",
+    color: "inherit",
+    margin: "0",
+    "&:hover,&:focus": {
+      background: "transparent",
+    },
+  },
+  appResponsive: {
+    top: "8px",
+  },
+  primary: {
+    backgroundColor: primaryColor[0],
+    color: whiteColor,
+    ...defaultBoxShadow,
+  },
+  info: {
+    backgroundColor: infoColor[0],
+    color: whiteColor,
+    ...defaultBoxShadow,
+  },
+  success: {
+    backgroundColor: successColor[0],
+    color: whiteColor,
+    ...defaultBoxShadow,
+  },
+  warning: {
+    backgroundColor: warningColor[0],
+    color: whiteColor,
+    ...defaultBoxShadow,
+  },
+  danger: {
+    backgroundColor: dangerColor[0],
+    color: whiteColor,
+    ...defaultBoxShadow,
+  },
+  search: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: "#f5f5f51a",
+    "&:hover": {
+      backgroundColor: "#f5f5f51a",
+    },
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(1),
+      width: "auto",
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    color: whiteColor,
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+});
+
+export default headerStyle;
